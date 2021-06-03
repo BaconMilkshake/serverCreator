@@ -1,0 +1,10 @@
+{
+    "terraria":{
+        "compose":"compose/terrariacompose.yml",
+        "name":"terraria"
+    },
+    "minecraft":{
+        "compose":"minecraft.yml",
+        "name":"minecraft"
+    }
+}

@@ -1,0 +1,11 @@
+version: '3.9'
+services:
+  game:
+    image: matthewyoung153/terraria
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+    #network_mode: host
+    ports: 
+      - 7777:7777
+    #volumes: 
+      #- ./game_state/worlds:/root/.local/share/Terraria/Worlds
