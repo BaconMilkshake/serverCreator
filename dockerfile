@@ -1,7 +1,6 @@
-FROM ubuntu
+FROM python
 
 WORKDIR /enviroment/
 RUN apt-get update \
-    && apt-get install -y docker.io \
-    && apt-get install -y python3.9.4
+    && apt-get install -y docker.io
 CMD ["python", "main.py"]

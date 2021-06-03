@@ -5,9 +5,12 @@ services:
 #        depends_on:
 #            - db
         volumes: 
-            - ./project/:/environment
+            - ./project:/enviroment
         networks:
             - internal
+        stdin_open: true # docker run -i
+        tty: true 
+ 
 
 #    db:
 #        image: postgres
