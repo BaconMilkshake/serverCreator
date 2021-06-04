@@ -25,5 +25,7 @@ print(server)
 #point docker at EC2
 
 #run the docker compose file
-#os.system("docker compose -f ./compose/terrariacompose.yml up")
-#attach console to the server
+
+os.system("docker compose -f ./compose/terrariacompose.yml up -d")
+
+#tail the log then attach console to the server
