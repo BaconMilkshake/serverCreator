@@ -13,15 +13,15 @@ import os
 
 #choose game and spec 
 game = menu.getSelectedGameDict()
-#spec = menu.getSelectedServerSpec() # eg 't2.micro'
+spec = menu.getSelectedServerSpec() # eg 't2.micro'
 
-#create the EC2 server tagged with user id
+#create the EC2 server and save server id in users table
 
-cloud.create('t2.micro')
+server = cloud.create(spec)
 
 #Get IP and details
 
-
+print(server)
 #point docker at EC2
 
 #run the docker compose file

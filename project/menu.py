@@ -17,4 +17,7 @@ def getSelectedGameDict() -> dict:
 
     print(f"you have chosen {data[data_keys[selected_index]]['name']}")
     return data[data_keys[selected_index]]
+
+def getSelectedServerSpec() -> str:
+    return 't2.micro'
     
