@@ -2,8 +2,8 @@ version: '3.9'
 services: 
     servercreator:
         image: servercreator
-#        depends_on:
-#            - db
+        depends_on:
+            - db
         volumes: 
             - ./project:/enviroment
         networks:
@@ -12,13 +12,16 @@ services:
         tty: true 
  
 
-#    db:
-#        image: postgres
-#        restart: always
-#        environment:
-#            POSTGRES_PASSWORD: example
-#        networks: 
-#            - internal
+    db:
+        image: postgres
+        restart: always
+        environment:
+            POSTGRES_USER: postgres
+            POSTGRES_PASSWORD: Mv3qCSJwMkRr9FPzTsRehc5MxewQYC9
+            POSTGRES_DB: backend
+
+        networks: 
+            - internal
 networks:
     internal:
 

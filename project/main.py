@@ -1,7 +1,9 @@
 import menu
 import cloud
 import os
+import db
 
+db.initialise()
 
 
 #user login:
