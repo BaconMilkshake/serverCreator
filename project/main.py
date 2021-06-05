@@ -8,12 +8,14 @@ db.initialise()
 
 #user login:
 
-credentials = menu.user_log_in()
+credentials = menu.userLogIn()
+username = credentials[0]
+password = credentials[1]
 
 #retrieve user id user id 
-
-    #userID = db.getuserID(credentials)
-
+userID = db.getuserID(username,password)
+if userID is None:
+    db.createUser(username,password)
 #choose game and spec 
 game = menu.getSelectedGameDict()
 spec = menu.getSelectedServerSpec() # eg 't2.micro'
@@ -26,6 +28,7 @@ server = cloud.create(spec)
 
 print(server)
 #point docker at EC2
+
 
 #run the docker compose file
 

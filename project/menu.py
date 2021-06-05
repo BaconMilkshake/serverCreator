@@ -2,6 +2,7 @@
 # games dictionary that is selected through getSelectedGameDict()
 # depends on ./games.json
 import json
+
 def getSelectedGameDict() -> dict:
     data = json.load(open("games.json"))
 
@@ -21,8 +22,8 @@ def getSelectedGameDict() -> dict:
 def getSelectedServerSpec() -> str:
     return 't2.micro'
     
-def userLogIn() -> tuple(str,str): # returns (username, password)
+def userLogIn() -> tuple[str,str]: # returns (username, password)
     print("Please enter your credentials")
     username = input("username: ")
     password = input("password: ")
-    return(tuple(username,password))
+    return((username,password))

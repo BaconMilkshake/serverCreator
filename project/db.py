@@ -34,4 +34,16 @@ def initialise(): #does adds needed tables if does not already exist
 );
     ''')
     conn.commit()
-    
+
+def getuserID(username,password) -> str:
+    cursor.execute(f'''
+    SELECT username, password, user_id
+    FROM accounts
+    WHERE username = '{username}' AND
+    password = '{password}';        
+    ''')
+    userRow=cursor.fetchone()
+    if userRow is None:
+        return None
+    else:   
+        return userRow[2]
