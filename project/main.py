@@ -7,7 +7,8 @@ db.initialise()
 
 
 #user login:
-#credentials = menu.user_log_in()
+
+credentials = menu.user_log_in()
 
 #retrieve user id user id 
 

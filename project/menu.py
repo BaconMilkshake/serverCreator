@@ -21,3 +21,8 @@ def getSelectedGameDict() -> dict:
 def getSelectedServerSpec() -> str:
     return 't2.micro'
     
+def userLogIn() -> tuple(str,str): # returns (username, password)
+    print("Please enter your credentials")
+    username = input("username: ")
+    password = input("password: ")
+    return(tuple(username,password))
