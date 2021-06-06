@@ -49,7 +49,8 @@ def getuserID(username,password) -> str:
         return userRow[2]
 def createUser(username, password):
     user_id = uuid.uuid4().hex
-    cursor.execute(f'''
-    INSERT INTO accounts
-    VALUES ({username}, {password}, {user_id});    
-    ''')
+    cursor.execute('''
+    INSERT INTO accounts (username, password, user_id)
+    VALUES (%s, %s, %s);    
+    ''', (username,password,user_id))
+    conn.commit()

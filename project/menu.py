@@ -23,7 +23,7 @@ def getSelectedGameDict() -> dict:
 def getSelectedServerSpec() -> str:
     options = ["t2.micro"]
     choice = -1
-    while (choice not in range(n)):
+    while (choice not in range(len(options))):
         for n in range(len(options)):
             print(f"{n} for {options[n]}")
         choice = int(input())

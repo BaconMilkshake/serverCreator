@@ -24,6 +24,7 @@ print(server)
 #point docker at EC2
 
 
+
 #run the docker compose file
 
 os.system("docker compose -f ./compose/terrariacompose.yml up -d")
