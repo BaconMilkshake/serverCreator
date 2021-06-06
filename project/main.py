@@ -8,14 +8,8 @@ db.initialise()
 
 #user login:
 
-credentials = menu.userLogIn()
-username = credentials[0]
-password = credentials[1]
+userId = menu.sign_in_or_up(db_get_userID = db.getuserID, db_create_user = db.createUser)
 
-#retrieve user id user id 
-userID = db.getuserID(username,password)
-if userID is None:
-    db.createUser(username,password)
 #choose game and spec 
 game = menu.getSelectedGameDict()
 spec = menu.getSelectedServerSpec() # eg 't2.micro'

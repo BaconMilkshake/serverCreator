@@ -2,6 +2,7 @@
 # games dictionary that is selected through getSelectedGameDict()
 # depends on ./games.json
 import json
+from os import error
 
 def getSelectedGameDict() -> dict:
     data = json.load(open("games.json"))
@@ -20,10 +21,44 @@ def getSelectedGameDict() -> dict:
     return data[data_keys[selected_index]]
 
 def getSelectedServerSpec() -> str:
-    return 't2.micro'
+    options = ["t2.micro"]
+    choice = -1
+    while (choice not in range(n)):
+        for n in range(len(options)):
+            print(f"{n} for {options[n]}")
+        choice = int(input())
+    return(options[choice])
     
 def userLogIn() -> tuple[str,str]: # returns (username, password)
     print("Please enter your credentials")
     username = input("username: ")
     password = input("password: ")
     return((username,password))
+
+def prompt_login_or_create() -> str:
+    while(True):
+        print("Welcome! Enter 1 to log in or 2 to create an account")
+        response = input("login(1)/create(2): ")
+        if(response == "1"):
+            return 'log in'
+        if(response == "2"):
+            return 'create'
+
+def get_sign_up_details() -> tuple[str,str]:
+    print("Please enter your credentials")
+    username = input("username: ")
+    password = input("password: ")
+    return((username,password))
+
+def sign_in_or_up(db_get_userID, db_create_user) -> str: # returns user id
+    userID = None
+    while(userID is None): # not logged in
+        choice = prompt_login_or_create()
+        if (choice == 'create'):
+            credentials = get_sign_up_details()
+            db_create_user(credentials[0],credentials[1])
+        if (choice == 'log in'): 
+            credentials = userLogIn()
+            userID = db_get_userID(credentials[0],credentials[1]) # if invalid it returns none
+            if userID is None:
+                print("invalid log in")

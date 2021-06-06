@@ -1,5 +1,5 @@
 import psycopg2
-
+import uuid
 
 
 conn = psycopg2.connect(
@@ -47,3 +47,9 @@ def getuserID(username,password) -> str:
         return None
     else:   
         return userRow[2]
+def createUser(username, password):
+    user_id = uuid.uuid4().hex
+    cursor.execute(f'''
+    INSERT INTO accounts
+    VALUES ({username}, {password}, {user_id});    
+    ''')
