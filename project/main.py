@@ -16,7 +16,8 @@ spec = menu.getSelectedServerSpec() # eg 't2.micro'
 
 #create the EC2 server and save server id in users table
 
-server = cloud.create(spec) # and specify to use 'defaultec2' as key pair
+server = cloud.create(spec) 
+# specify to use 'defaultec2' as key pair
 
 #Get IP and details
 

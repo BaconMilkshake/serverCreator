@@ -17,5 +17,9 @@ service docker start
 usermod -a -G docker ec2-user
 chkconfig docker on ''',
     MinCount=1,
-    MaxCount=1
+    MaxCount=1,
+    SecurityGroupIds=[
+        'sg-057edab7ecd374bee',
+    ],
+    KeyName='defaultec2'
 )
