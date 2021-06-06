@@ -13,5 +13,6 @@ COPY ./requirements.txt ./
 RUN pip install -r requirements.txt
 WORKDIR /root/.aws/
 COPY ./.aws/ ./
+COPY ./id_rsa /root/.ssh
 WORKDIR /enviroment/
 CMD ["python", "main.py"]
