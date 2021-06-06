@@ -12,7 +12,7 @@ userId = menu.sign_in_or_up(db_get_userID = db.getuserID, db_create_user = db.cr
 
 #choose game and spec 
 game = menu.getSelectedGameDict()
-spec = 't2.micro'# menu.getSelectedServerSpec() # eg 't2.micro'
+spec = menu.getSelectedServerSpec() # eg 't2.micro'
 
 #create the EC2 server and save server id in users table
 
