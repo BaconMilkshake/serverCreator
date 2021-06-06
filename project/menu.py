@@ -21,7 +21,7 @@ def getSelectedGameDict() -> dict:
     return data[data_keys[selected_index]]
 
 def getSelectedServerSpec() -> str:
-    options = ["t2.micro"]
+    options = ['t2.micro']
     choice = -1
     while (choice not in range(len(options))):
         for n in range(len(options)):
